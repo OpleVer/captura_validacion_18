@@ -1,0 +1,21 @@
+<div ng-cloak>
+    <div class="row">
+        <div class="col-md-4">
+            <span ><img src="content/images/logo-ople.png" alt="" width="350" height="230"/></span>
+        </div>
+        <div class="col-md-8">
+            <h1>Sistema de Captura y Validación PREP 2018 OPLE Veracruz</h1>
+            <p class="lead">Bienvenido</p>
+
+            <div ng-switch="vm.isAuthenticated()">
+                <div class="alert alert-success" ng-switch-when="true">
+                    Has iniciado sesion como "{{vm.account.login}}".
+                </div>
+
+                <div class="alert alert-warning" ng-switch-when="false">
+                    <a class="alert-link" href="" ng-click="vm.login()">Inicia Sesion</a>, utiliza tus credenciales de acceso<br/>Nombre de Usuario<br/>Contraseña
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
