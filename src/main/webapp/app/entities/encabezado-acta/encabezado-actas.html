@@ -1,0 +1,66 @@
+<div>
+    <h2>Encabezado Actas</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="encabezado-acta.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Encabezado Acta
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
+                    <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="distrito"><span>Distrito</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="tipo_acta"><span>Tipo Acta</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="seccion"><span>Seccion</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="casilla"><span>Casilla</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <!--<th jh-sort-by="digitalizacion"><span>Digitalizacion</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <th jh-sort-by="estatus"><span>Estatus</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+                <tr ng-repeat="encabezado_acta in vm.encabezado_actas track by encabezado_acta.id">
+                    <td><a ui-sref="encabezado-acta-detail({id:encabezado_acta.id})">{{encabezado_acta.id}}</a></td>
+                    <td>{{encabezado_acta.distrito}}</td>
+                    <td>{{encabezado_acta.tipo_acta}}</td>
+                    <td>{{encabezado_acta.seccion}}</td>
+                    <td>{{encabezado_acta.casilla}}</td>
+                    <!--<td>{{encabezado_acta.digitalizacion}}</td>-->
+                    <td>{{encabezado_acta.estatus}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="encabezado-acta-detail({id:encabezado_acta.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="encabezado-acta.edit({id:encabezado_acta.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="encabezado-acta.delete({id:encabezado_acta.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

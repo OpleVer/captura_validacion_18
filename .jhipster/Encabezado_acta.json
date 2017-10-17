@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "distrito",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tipo_acta",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "seccion",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "casilla",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "digitalizacion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "estatus",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20171017163345",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "encabezado_acta",
+    "jpaMetamodelFiltering": false,
+    "pagination": "infinite-scroll"
+}

@@ -1,0 +1,28 @@
+
+<div>
+    <h2><span>Encabezado de Acta</span></h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dd>
+            <h4>Distrito: <span>{{vm.encabezado_acta.distrito}}</span></h4>
+            <h4>Tipo de Acta: <span>{{vm.encabezado_acta.tipo_acta}}</span></h4>
+            <h4>Seccion: <span>{{vm.encabezado_acta.seccion}}</span></h4>
+            <h4>Casilla: <span>{{vm.encabezado_acta.casilla}}</span></h4>
+            <h4>Estatus del Acta: <span>{{vm.encabezado_acta.estatus}}</span></h4>
+        </dd>
+    </dl>
+    <img src="{{vm.encabezado_acta.digitalizacion}}" alt="" width="1100" height="800">
+    <br>
+    <br>
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Atras</span>
+    </button>
+
+    <button type="button" ui-sref="encabezado-acta-detail.edit({id:vm.encabezado_acta.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Editar</span>
+    </button>
+</div>
